@@ -18,7 +18,7 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
             age: 45
         }
     }
-    updatePerson ( event: any ) {
+    updatePerson = ( event: any ) => {
         event.preventDefault();
 
         let firstNameString: string,
@@ -58,12 +58,12 @@ export default class Person extends React.Component<IPersonProps, IPersonState> 
                 <form onSubmit={this.updatePerson}>
                     <h3>Update Person</h3>
                     <label htmlFor="first-name">First Name:</label>
-                    <input type="text" name="first-name" value={this.state.firstName} />
+                    <input type="text" name="first-name" defaultValue={this.state.firstName} />
                     <label htmlFor="last-name">Last Name:</label>
-                    <input type="text" name="last-name" value={this.state.lastName} />
+                    <input type="text" name="last-name" defaultValue={this.state.lastName} />
                     <label htmlFor="age">Age:</label>
-                    <input type="number" name="age" value={this.state.age} />
-                    <input type="submit" value="Apply Changes" />
+                    <input type="number" name="age" defaultValue={this.state.age} />
+                    <input type="submit" value="Apply Updates" />
                 </form>
             </div>
         );
